@@ -2,6 +2,45 @@
   var STORAGE_KEY = "registration.lang";
 
   var dictionaries = {
+    ko: {
+      brand: "투게더마트",
+      speed: "SPEED",
+      signupTitle: "회원가입",
+      termsHeaderLabel: "이용 약관",
+      cancel: "취소",
+      save: "저장",
+      agreeAndSignup: "동의하고 회원가입",
+      memberGeneral: "일반회원",
+      memberBusiness: "사업자회원",
+      customerNameLabel: "고객명",
+      mobileLabel: "휴대폰 번호",
+      businessNameLabel: "사업자명",
+      businessNumberLabel: "사업자번호",
+      addressLabel: "주소",
+      requiredLabel: "(필수)",
+      termsBody:
+        '<b class="text-lg mb-4">회원가입 약관</b>' +
+        '<b class="mt-6 mb-4">회원가입 및 개인정보 제공 동의</b>' +
+        '당사 매장을 방문해주셔서 감사합니다.<br /><br />' +
+        '당사는 회원 서비스 제공을 위해 아래와 같이 최소한의 개인정보를 수집 및 이용하며, 이에 대한 동의를 받고자 합니다.<br /><br />' +
+        '<b class="mt-6 mb-4">1. 수집 및 이용 목적</b>' +
+        '회원 식별, 포인트 적립 및 사용, 고객 응대, 배송 서비스 제공을 위해 필요한 최소한의 정보를 수집합니다.<br /><br />' +
+        '<table class="table-fix mt-6 leading-tight">' +
+        '<tbody>' +
+        '<tr><td class="border border-slate-300 p-1">구분</td><td class="border border-slate-300 p-1">수집 항목</td><td class="border border-slate-300 p-1">이용 목적</td></tr>' +
+        '<tr><td class="border border-slate-300 p-1">필수</td><td class="border border-slate-300 p-1">성명, 휴대폰번호</td><td class="border border-slate-300 p-1">포인트 적립, 고객상담, 본인 확인</td></tr>' +
+        '<tr><td class="border border-slate-300 p-1">선택</td><td class="border border-slate-300 p-1">주소</td><td class="border border-slate-300 p-1">배송 서비스</td></tr>' +
+        '<tr><td class="border border-slate-300 p-1">선택</td><td class="border border-slate-300 p-1">생년월일, 성별</td><td class="border border-slate-300 p-1">회원 관리, 이벤트 제공</td></tr>' +
+        '<tr><td class="border border-slate-300 p-1">선택</td><td class="border border-slate-300 p-1">사업자명, 사업자번호</td><td class="border border-slate-300 p-1">세금계산서 발행 및 고객 상담</td></tr>' +
+        '</tbody>' +
+        '</table><br />' +
+        '<b class="mt-6 mb-4">2. 보유 및 이용 기간</b>' +
+        '개인정보는 수집 목적이 달성되거나 삭제 요청 시까지 보관하며, 관련 법령에 따라 필요한 경우 별도로 보관될 수 있습니다.<br /><br />' +
+        '<b class="mt-6 mb-4">3. 제3자 제공</b>' +
+        '법령에 따른 경우를 제외하고, 고객의 동의 없이 제3자에게 개인정보를 제공하지 않습니다.<br /><br />' +
+        '<b class="mt-6 mb-4">4. 회원 탈퇴</b>' +
+        '회원은 언제든지 매장 내 절차를 통해 탈퇴를 요청할 수 있습니다.<br /><br />',
+    },
     en: {
       brand: "Together Mart",
       speed: "SPEED",
@@ -84,19 +123,25 @@
 
   function normalizeLanguage(languageTag) {
     if (!languageTag) {
-      return "en";
+      return "ko";
     }
     var lang = String(languageTag).toLowerCase();
+    if (lang.indexOf("ko") === 0) {
+      return "ko";
+    }
     if (lang.indexOf("zh") === 0) {
       return "zh";
     }
-    return "en";
+    if (lang.indexOf("en") === 0) {
+      return "en";
+    }
+    return "ko";
   }
 
   function getSavedLanguage() {
     try {
       var saved = window.localStorage.getItem(STORAGE_KEY);
-      return saved === "zh" || saved === "en" ? saved : null;
+      return saved === "ko" || saved === "zh" || saved === "en" ? saved : null;
     } catch (_error) {
       return null;
     }
@@ -117,6 +162,9 @@
 
     for (var i = 0; i < candidates.length; i += 1) {
       var normalized = normalizeLanguage(candidates[i]);
+      if (normalized === "ko") {
+        return "ko";
+      }
       if (normalized === "zh") {
         return "zh";
       }
@@ -125,7 +173,7 @@
       }
     }
 
-    return "en";
+    return "ko";
   }
 
   function getTranslation(lang, key) {
@@ -160,7 +208,7 @@
   }
 
   function setLanguage(lang) {
-    var safeLang = lang === "zh" ? "zh" : "en";
+    var safeLang = dictionaries[lang] ? lang : "ko";
     try {
       window.localStorage.setItem(STORAGE_KEY, safeLang);
     } catch (_error) {
