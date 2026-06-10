@@ -123,7 +123,7 @@
 
   function normalizeLanguage(languageTag) {
     if (!languageTag) {
-      return "ko";
+      return null;
     }
     var lang = String(languageTag).toLowerCase();
     if (lang.indexOf("ko") === 0) {
@@ -135,7 +135,7 @@
     if (lang.indexOf("en") === 0) {
       return "en";
     }
-    return "ko";
+    return null;
   }
 
   function getSavedLanguage() {
@@ -148,23 +148,20 @@
   }
 
   function detectLanguage() {
+    var primaryLanguage = normalizeLanguage(navigator.language);
+    if (dictionaries[primaryLanguage]) {
+      return primaryLanguage;
+    }
+
     var candidates = [];
     if (Array.isArray(navigator.languages) && navigator.languages.length > 0) {
       candidates = navigator.languages;
-    } else if (navigator.language) {
-      candidates = [navigator.language];
     }
 
     for (var i = 0; i < candidates.length; i += 1) {
       var normalized = normalizeLanguage(candidates[i]);
-      if (normalized === "ko") {
-        return "ko";
-      }
-      if (normalized === "zh") {
-        return "zh";
-      }
-      if (normalized === "en") {
-        return "en";
+      if (dictionaries[normalized]) {
+        return normalized;
       }
     }
 
