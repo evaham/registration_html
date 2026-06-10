@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="./output.css" />
+    </head>
+
+    <body class="" data-i18n-page="signup">
+        <div class="max-w-96 mx-auto">
+            <div class="mx-4 py-4">
+                <div class="lang-switch" role="group" aria-label="Language switcher" style="display:none">
+                    <button type="button" class="lang-btn" data-lang-switch="en">EN</button>
+                    <button type="button" class="lang-btn" data-lang-switch="zh">中文</button>
+                </div>
+                <p class="text-4xl leading-tight font-bold tracking-tighter text-emerald-600/95" data-i18n="brand">투게더마트</p>
+                <p class="text-4xl leading-tight font-bold tracking-tighter text-slate-600"><span class="text-[#06CC99] italic mr-3" data-i18n="speed">SPEED</span> <span data-i18n="signupTitle">회원가입</span>
+                </p>
+            </div>
+            <div class="">
+                <div class="flex mx-4 rounded-full border font-bold border-slate-200 overflow-hidden">
+                    <a id="1" class="flex-1 py-3 text-center bg-slate-100 text-slate-400" data-i18n="memberGeneral">일반회원</a>
+                    <a id="2" class="flex-1 py-3 text-center bg-[#06CC99] text-white" data-i18n="memberBusiness">사업자회원</a>
+                </div>
+                <div class="mt-4 my-2">
+                    <form>
+                        <div class="mx-4 px-8 py-4 bg-slate-100 rounded-md">
+                            <div class="mb-2">
+                                <label class="flex items-center text-sm leading-6 text-slate-500 font-bold"><span data-i18n="customerNameLabel">고객명</span><span class="ml-1 text-xs text-pink-400" data-i18n="requiredLabel">(필수)</span></label>
+                                <div class="relative mt-1">
+                                    <input class="block w-full p-1.5 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="text" value="" name="name" />
+                                </div>
+                            </div>
+                            <div class="my-2">
+                                <label class="flex items-center text-sm leading-6 text-slate-500 font-bold"><span data-i18n="mobileLabel">휴대폰 번호</span><span class="ml-1 text-xs text-pink-400" data-i18n="requiredLabel">(필수)</span></label>
+                                <div class="relative flex mt-0.5 gap-1 items-center">
+                                    <input maxlength="3" class="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="tel" value="" name="phone" />
+                                    <span>-</span>
+                                    <input maxlength="4" class="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="tel" value="" name="phone" />
+                                    <span>-</span>
+                                    <input maxlength="4" class="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="tel" value="" name="phone" />
+                                </div>
+                            </div>
+                            <div>
+                                <div class="my-2">
+                                    <label class="flex items-center text-sm leading-6 text-slate-500 font-bold"><span data-i18n="businessNameLabel">사업자명</span><span class="ml-1 text-xs text-pink-400" data-i18n="requiredLabel">(필수)</span></label>
+                                    <div class="relative mt-0.5">
+                                        <input class="block w-full px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="text" value="" name="text" />
+                                    </div>
+                                </div>
+                                <div class="my-2">
+                                    <label class="flex items-center text-sm leading-6 text-slate-500 font-bold"><span data-i18n="businessNumberLabel">사업자번호</span><span class="ml-1 text-xs text-pink-400" data-i18n="requiredLabel">(필수)</span></label>
+                                    <div class="relative flex mt-0.5 gap-1 items-center">
+                                        <input maxlength="3" class="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="tel" value="" name="number" />
+                                        <span>-</span>
+                                        <input maxlength="2" class="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="tel" value="" name="number" />
+                                        <span>-</span>
+                                        <input maxlength="5" class="flex-1 min-w-0 px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 text-center outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="tel" value="" name="number" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="my-2">
+                                <label class="block text-sm leading-6 text-slate-500 font-bold" data-i18n="addressLabel">주소</label>
+                                <div class="relative mt-1">
+                                    <input id="adress" class="block w-full px-1.5 py-1 rounded-md border border-slate-300 shadow-sm text-gray-900 outline-none text-lg placeholder:text-gray-400 focus:border-[#06CC99]" placeholder="" type="text" name="price" />
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="flex mt-2 px-4 py-3 gap-2 bg-white">
+                <button class="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600" data-i18n="cancel">취소</button>
+                <button disabled="" class="block w-full p-3 border text-center rounded-md bg-slate-100 text-slate-400" data-i18n="save">저장</button>
+            </div>
+        </div>
+        <script src="./i18n.js"></script>
+    </body>
+</html>

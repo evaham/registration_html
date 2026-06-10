@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+
+  <body class="" data-i18n-page="terms">
+    <div class="max-w-96 mx-auto">
+      <div class="mx-4 py-4">
+        <div class="lang-switch" role="group" aria-label="Language switcher" style="display:none;">
+          <button type="button" class="lang-btn" data-lang-switch="en">EN</button>
+          <button type="button" class="lang-btn" data-lang-switch="zh">中文</button>
+        </div>
+        <p
+          class="text-4xl leading-tight font-bold tracking-tighter text-emerald-600/95"
+          data-i18n="brand"
+        >
+          투게더마트
+        </p>
+        <p
+          class="text-4xl leading-tight font-bold tracking-tighter text-slate-600"
+        >
+          <span class="text-[#06CC99] italic mr-3" data-i18n="speed">SPEED</span>
+          <span data-i18n="signupTitle">회원가입</span>
+        </p>
+      </div>
+      <div class="mt-4 mx-4">
+        <p class="flex items-center text-slate-600 tracking-tighter" data-i18n="termsHeaderLabel">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            class="flex w-3 h-3 mr-1 items-center fill-[#06CC99]"
+            viewBox="0 -960 960 960"
+          >
+            <path
+              d="M480.28-96Q401-96 331-126t-122.5-82.5Q156-261 126-330.96t-30-149.5Q96-560 126-629.5q30-69.5 82.5-122T330.96-834q69.96-30 149.5-30t149.04 30q69.5 30 122 82.5T834-629.28q30 69.73 30 149Q864-401 834-331t-82.5 122.5Q699-156 629.28-126q-69.73 30-149 30Z"
+            ></path>
+          </svg>
+          Terms and Conditions
+        </p>
+        <div
+          class="overflow-y-scroll flex h-96 mt-2 p-4 bg-slate-100 rounded-md"
+        >
+          <div class="flex flex-col flex-1 font-sans break-all text-slate-800" data-i18n-html="termsBody"></div>
+        </div>
+      </div>
+      <div class="flex mt-2 px-4 py-3 gap-2 bg-white">
+        <button
+          class="block w-full p-3 border border-[#06CC99] rounded-md text-slate-600"
+          data-i18n="cancel"
+        >
+          취소
+        </button>
+        <button
+          class="block w-full p-3 border bg-[#06CC99] rounded-md text-white"
+          data-i18n="agreeAndSignup"
+        >
+          동의하고 회원가입
+        </button>
+      </div>
+    </div>
+    <script src="./i18n.js"></script>
+  </body>
+</html>
