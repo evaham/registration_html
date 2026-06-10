@@ -148,11 +148,6 @@
   }
 
   function detectLanguage() {
-    var saved = getSavedLanguage();
-    if (saved) {
-      return saved;
-    }
-
     var candidates = [];
     if (Array.isArray(navigator.languages) && navigator.languages.length > 0) {
       candidates = navigator.languages;
@@ -173,7 +168,7 @@
       }
     }
 
-    return "ko";
+    return getSavedLanguage() || "ko";
   }
 
   function getTranslation(lang, key) {
